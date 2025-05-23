@@ -34,7 +34,7 @@ public class ItemPedido extends CalculoTotal{
     public void calcularTotal(){
         double soma = 0;
         for (int i = 0; i < pratos.size() ; i++) {
-             soma += pratos.get(i).getValor();
+             soma = pratos.get(i).getValor() * pratos.get(i).getQuantidade();
 
         }
         System.out.println(soma);

@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -8,11 +9,15 @@ public class Restaurante {
 
     public void metodoPrincipal(){
         boolean verdadeiro = true;
+        int opcao, contador = 1;
+        List<ItemPedido> itens = new ArrayList<>();
+        ItensPedidosBD pedidos = new ItensPedidosBD();
         while(verdadeiro = true){
             Cliente cliente = new Cliente();
             ItemPedido pedido = new ItemPedido();
             Cardapio cardapio = new Cardapio();
-            int opcao, contador = 1;
+
+
             Scanner scanner = new Scanner(System.in);
             List<Prato> pratoList = new ArrayList<>();
 
@@ -27,13 +32,33 @@ public class Restaurante {
                 pedido.setPratos(pratoList);
                 pedido.setNum(contador);
                 pedido.setCliente(cliente);
+                itens.add(pedido);
+                pedidos.setItemPedidoList(itens);
                 contador++;
             }else{
                 System.out.println("Opção inválida.");
-                return;
+                continue;
             }
-            pedido.exibirInfo();
-            break;
+            System.out.println("Você deseja realizar um novo pedido? [1] - SIM [2] - NÃO");
+            int opcaoRecomecar = scanner.nextInt();
+            if (opcaoRecomecar == 1){
+                System.out.println("Obrigado pela preferência. ");
+                System.out.println("Segue seu pedido/ticket:  ");
+                pedido.exibirInfo();
+                System.out.println("Recomeçando. ");
+                continue;
+            }else {
+                System.out.println("Obrigado pela preferência. ");
+                System.out.println("Segue seu pedido/ticket:  ");
+                pedido.exibirInfo();
+                pedidos.exibirItensPedidosBD();
+                break;
+            }
+
+
+
+
+
         }
 
 
