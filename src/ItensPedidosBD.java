@@ -22,11 +22,14 @@ public class ItensPedidosBD {
             System.out.println("------------------------------------------------");
             System.out.println("Número do Pedido: " + item.getNum());
             System.out.println("Nome do Cliente: " + item.getCliente().getNome());
+             System.out.println("------------------------------------------------");
+
 
 
             List<Prato> pratos = item.getPratos();
             for (int j = 0; j < pratos.size(); j++) {
                 Prato prato = pratos.get(j);
+                System.out.println("------------------------------------------------");
                 System.out.println("  Nome do Prato: " + prato.getNome());
                 System.out.println("  Descrição: " + prato.getDescricao());
                 System.out.println("  Quantidade: " + prato.getQuantidade());
@@ -35,7 +38,7 @@ public class ItensPedidosBD {
 
             }
         }
-
+        System.out.println("------------------------------------------------");
         System.out.println("Total vendido no dia: " + total);
 
 

@@ -8,9 +8,6 @@ public class Prato {
     private int quantidade;
     private double valor;
 
-
-
-
     Prato(String nome, String descricao, int quantidade, double valor){
         this.nome = nome;
         this.descricao = descricao;

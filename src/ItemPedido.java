@@ -55,10 +55,9 @@ public class ItemPedido extends CalculoTotal{
         } else {
             System.out.println("Nenhum prato adicionado.");
         }
+         System.out.println("------------------------------------------------");
         System.out.print("Total do pedido: R$: " ); calcularTotal();
     }
-
-
 
 
 }
