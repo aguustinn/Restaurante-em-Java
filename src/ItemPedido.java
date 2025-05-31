@@ -41,23 +41,30 @@ public class ItemPedido extends CalculoTotal{
     }
 
     public void exibirInfo() {
-        System.out.println("Pedido número: " + num);
-        if (cliente != null) {
-            System.out.println("Cliente: " + cliente.getNome());
-        } else {
-            System.out.println("Cliente: não informado");
-        }
-        System.out.println("Pratos do pedido:");
-        if (pratos != null && !pratos.isEmpty()) {
-            for (Prato prato : pratos) {
-                System.out.println("- " + prato.getNome() + " | Valor: R$ " + prato.getValor());
-            }
-        } else {
-            System.out.println("Nenhum prato adicionado.");
-        }
-         System.out.println("------------------------------------------------");
-        System.out.print("Total do pedido: R$: " ); calcularTotal();
+    System.out.println("========================================");
+    System.out.println("              PEDIDO DE MESA            ");
+    System.out.println("========================================");
+    System.out.println("Pedido número: " + num);
+    if (cliente != null) {
+        System.out.println("Cliente: " + cliente.getNome());
+    } else {
+        System.out.println("Cliente: não informado");
     }
-
+    System.out.println("----------------------------------------");
+    System.out.println("Pratos do pedido:");
+    if (pratos != null && !pratos.isEmpty()) {
+        for (Prato prato : pratos) {
+            System.out.println("- " + prato.getNome() + " | Valor: R$ " +prato.getValor());
+        }
+    } else {
+        System.out.println("Nenhum prato adicionado.");
+    }
+    System.out.println("----------------------------------------");
+    System.out.print("Total do pedido: R$: ");
+    calcularTotal();
+    System.out.println("\n========================================");
+    System.out.println("       Obrigado pela preferência!       ");
+    System.out.println("========================================");
+}
 
 }

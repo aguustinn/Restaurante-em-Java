@@ -22,14 +22,19 @@ public class Restaurante {
             Scanner scanner = new Scanner(System.in);
             List<Prato> pratoList = new ArrayList<>();
 
+            System.out.println("=========================");
+            System.out.println("Bem-vindo ao restaurante!");
+            System.out.println("=========================");
             System.out.println("Digite seu nome: ");
+
             String nome = scanner.nextLine();
             cliente.setNome(nome);
 
+            System.out.println("--------------------------------------------");
             System.out.println("Digite a opção correspondente do seu prato: ");
             for (int i = 0; i < cardapio.getPratoList().size(); i++){
 
-                System.out.printf("Prato n°: " + (i + 1) + " | Nome: "+ cardapio.getPratoList().get(i).getNome() + "\n");
+                System.out.printf("## Prato n°: " + (i + 1) + " | Nome: "+ cardapio.getPratoList().get(i).getNome() + "\n");
             }
             opcao = scanner.nextInt();
             if (opcao > 0 && opcao <= 5){
@@ -47,14 +52,12 @@ public class Restaurante {
             System.out.println("Você deseja receber o cupom fiscal de seu pedido? [1] - SIM [2] - NÃO");
             int opcaoCupom = scanner.nextInt();
             if (opcaoCupom == 1){
-                System.out.println("Obrigado pela preferência. ");
                 System.out.println("Segue seu pedido/ticket:  ");
                 pedido.exibirInfo();
             }
             System.out.println("Você deseja realizar um novo pedido? [1] - SIM [2] - NÃO");
             int opcaoRecomecar = scanner.nextInt();
             if (opcaoRecomecar == 1){
-                System.out.println("Obrigado pela preferência. ");
                 System.out.println("Segue seu pedido/ticket:  ");
                 System.out.println("Recomeçando. ");
                 continue;
