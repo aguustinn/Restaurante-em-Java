@@ -12,13 +12,11 @@ public class Restaurante {
         int opcao, contador = 1;
         List<ItemPedido> itens = new ArrayList<>();
         ItensPedidosBD pedidos = new ItensPedidosBD();
+        Cardapio cardapio = new Cardapio();
         
-        while(verdadeiro = true){
+        while(verdadeiro == true){
             Cliente cliente = new Cliente();
             ItemPedido pedido = new ItemPedido();
-            Cardapio cardapio = new Cardapio();
-
-
             Scanner scanner = new Scanner(System.in);
             List<Prato> pratoList = new ArrayList<>();
 
@@ -60,10 +58,10 @@ public class Restaurante {
             if (opcaoRecomecar == 1){
                 System.out.println("Segue seu pedido/ticket:  ");
                 System.out.println("Recomeçando. ");
-                continue;
+                verdadeiro = true;
             }else {
                 pedidos.exibirItensPedidosBD();
-                break;
+                verdadeiro = false;
             }
 
 

@@ -15,7 +15,6 @@ public class ItensPedidosBD {
     }
 
     public void exibirItensPedidosBD() {
-    ItemPedido itemPedido = new ItemPedido();
     System.out.println("===============================================");
     System.out.println("        RELATÓRIO DE PEDIDOS DO DIA            ");
     System.out.println("===============================================");
